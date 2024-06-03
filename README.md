@@ -28,9 +28,9 @@ To setup the project on your local machine:
 
 First, Clone the repository using GitHub website or git in Terminal
 ```
-  git clone https://github.com/pprofili-contrast/pygoat.git
+  git clone https://github.com/Contrast-Security-OSS/PyGoat.git
   ### To Download a specific branch
-  git clone -b <branch_name> https://github.com/pprofili-contrast/pygoat.git
+  git clone -b <branch_name> https://github.com/Contrast-Security-OSS/PyGoat.git
 ```
 
 #### Method 1
