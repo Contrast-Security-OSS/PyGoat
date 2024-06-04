@@ -16,7 +16,7 @@ spec:
       - name: pygoat
         image: pprofili/pygoat:k8s
         ports: 
-          - containerPort: 8080
+          - containerPort: 8000
         envFrom:
           - configMapRef:
               name: contrast-config  
