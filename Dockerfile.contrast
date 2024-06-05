@@ -15,6 +15,9 @@ ENV PYTHONUNBUFFERED 1
 # Install the Contrast agent
 RUN pip install -U contrast-agent
 
+# Copy the agent configuration file
+COPY ./contrast_security.yaml /etc/contrast/contrast_security.yaml
+
 # Install dependencies
 RUN python -m pip install --no-cache-dir pip==22.0.4
 COPY requirements.txt requirements.txt
