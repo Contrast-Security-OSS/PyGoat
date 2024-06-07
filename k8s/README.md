@@ -98,10 +98,10 @@ And you will notice that, again, the application deployment file (`k8s/pygoat_de
 ```
 ### Reference your Docker Image
 
-The application deployment file (`k8s/pygoat_deployment.yaml`) is currently configured to reference a pre-built image named `pprofili/pygoat:k8s`.  To instead have the deployment use the Docker image you built [above](#building-and-setting-up-the-net-core-applications-image-wcontrast), modify this line to point to your own Docker repository, for example change this:
+The application deployment file (`k8s/pygoat_deployment.yaml`) is currently configured to reference a pre-built image named `ghcr.io/contrast-security-oss/contrast/pygoat:k8s`.  To instead have the deployment use the Docker image you built [above](#building-and-setting-up-the-net-core-applications-image-wcontrast), modify this line to point to your own Docker repository, for example change this:
 ```yaml
  - name: pygoat  
-   image: pprofili/pygoat:k8s
+   image: ghcr.io/contrast-security-oss/contrast/pygoat:k8s
 ```
 to this:
 ```yaml
