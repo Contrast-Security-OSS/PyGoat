@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: pygoat
-spec: 
+spec:
   replicas: 1
-  selector: 
-    matchLabels: 
+  selector:
+    matchLabels:
       component: pygoat
   template:
     metadata:
@@ -14,13 +14,13 @@ spec:
     spec:
       containers:
       - name: pygoat
-        image: pprofili/pygoat:k8s
-        ports: 
+        image: "ghcr.io/contrast-security-oss/contrast/pygoat:k8s"
+        ports:
           - containerPort: 8000
         envFrom:
           - configMapRef:
-              name: contrast-config  
-        # Volume Mount for contrast_security.yaml  
+              name: contrast-config
+        # Volume Mount for contrast_security.yaml
         volumeMounts:
         - name: contrast-security
           readOnly: false
@@ -32,7 +32,7 @@ spec:
           limits:
             cpu: 1.0
             memory: 1Gi
-      # Volume from contrast-security secret     
+      # Volume from contrast-security secret
       volumes:
       - name: contrast-security
         secret:
