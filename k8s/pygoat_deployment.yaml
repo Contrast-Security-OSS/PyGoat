@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pygoat
-        image: "ghcr.io/contrast-security-oss/contrast/pygoat:k8s"
+        image: ghcr.io/contrast-security-oss/contrast/pygoat:k8s
         ports:
           - containerPort: 8000
         envFrom:
