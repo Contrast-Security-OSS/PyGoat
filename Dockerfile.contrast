@@ -16,6 +16,7 @@ ENV PYTHONUNBUFFERED 1
 RUN pip install -U contrast-agent
 
 # Copy the agent configuration file
+# Note that this is an optional step - an alternative is to configure the agent connectivity credentials via environment variables, for example using a secret in Kubernetes (see the example in the k8s folder)
 COPY ./contrast_security.yaml /etc/contrast/contrast_security.yaml
 
 # Install dependencies
@@ -32,4 +33,6 @@ WORKDIR /app/pygoat/
 
 EXPOSE 8000
 
+# The command here invokes the Contrast Agent via the Contrast Runner (https://docs.contrastsecurity.com/en/contrast-runner.html)
+# An alternative would be to omit that in the default CMD but override it at runtime (https://docs.docker.com/engine/reference/run/#commands-and-arguments)
 CMD ["contrast-python-run","--","/usr/local/bin/python","/app/manage.py","runserver","0.0.0.0:8000"]
